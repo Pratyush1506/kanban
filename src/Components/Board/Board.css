@@ -1,0 +1,21 @@
+.board{
+    min-width: 290px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.board-top{
+    display: flex;
+}
+
+.board-top-title{
+    flex:1;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.board-top-title span{
+    color: gray;
+}

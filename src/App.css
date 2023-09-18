@@ -10,3 +10,16 @@
     padding: 20px 30px;
     border-bottom: 1px solid #ccc;
 }
+
+.app-outer{
+    flex: 1;
+    width: 100%;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.app-boards{
+    min-width: fit-content;
+    display: flex;
+    gap: 30px;
+}
