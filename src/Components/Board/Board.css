@@ -1,5 +1,6 @@
 .board{
     min-width: 290px;
+    max-height: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -18,4 +19,25 @@
 
 .board-top-title span{
     color: gray;
+}
+
+.board-cards{
+    height: 100%;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 10px;
+    overflow-y: auto;
+}
+
+.board-card-add{
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 1px 2px 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.board-card-add:hover{
+    box-shadow: 1px 2px 0 1px #ccc;
 }
