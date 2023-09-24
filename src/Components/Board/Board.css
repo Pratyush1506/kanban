@@ -10,11 +10,29 @@
     display: flex;
 }
 
+
+.board-top-more{
+    position: relative;
+}
+
+.board-dropdown p {
+    cursor: pointer;
+}
+
+.board-dropdown{
+    background-color: white;
+    width: 130px;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 1px 0 20px rgba(0, 0, 0, 0.05);
+}
+
 .board-top-title{
     flex:1;
     display: flex;
     align-items: center;
     font-weight: bold;
+    gap: 5px;
 }
 
 .board-top-title span{

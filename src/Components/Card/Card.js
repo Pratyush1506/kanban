@@ -2,22 +2,48 @@ import React from 'react'
 import './Card.css'
 import { CheckSquare, Clock, MoreHorizontal } from 'react-feather'
 import Chip from '../Chip/Chip'
+import Dropdown from '../Dropdown/Dropdown'
+import { useState } from 'react'
 
-function Card() {
+function Card(props) {
+    
+const [showDropdown, setShowDropdown] = useState(false);
   return (
-    <div className='card'>
+    <div className='card'
+        draggable
+    >
         <div className="card-top">
-            <div className="card-labels">
-                <Chip text="Frontend" color="green" />
+            <div className="card-top-labels">
+                {
+                    props.card?.labels?.map((item,index)=>(
+                        <Chip key={index} text={item.text} color={item.color} />
+                    ))
+                }
+                
             </div>
-            <MoreHorizontal/>
+            <div className="card-top-more" onClick={() => setShowDropdown(true)}>
+                <MoreHorizontal />
+                {showDropdown && (
+                    <Dropdown onClose={()=> setShowDropdown(false)} >
+                    <div className="card-dropdown">
+                        <p onClick={()=>{
+                            props.removeCard(props.card?.id, props.boardId)
+                        }} >Delete Card</p>
+                    </div>
+                    </Dropdown>
+                )}
+            </div>
         </div>
-        <div className="card-title">weaasf ewdaf dwfasfa</div>
+        <div className="card-title"> {props.card?.title} </div>
         <div className="card-footer">
-            <p>
-                <Clock/>
-                29 Sept
-            </p>
+            {
+                props.card?.date &&( 
+                <p>
+                    <Clock/>
+                    {props.card?.date}
+                </p>
+            )}
+
             <p>
                 <CheckSquare />
                 1/4

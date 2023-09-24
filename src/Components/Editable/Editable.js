@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
 import './Editable.css'
 import { X } from 'react-feather'
+
+
 function Editable(props) {
-  const [showEdit, setShowEdit] = useState(false)
+  const [showEdit, setShowEdit] = useState(false);
+  const [inputValue, setInputValue] = useState("")
+
   return (
     <div className='edittable'>
 
@@ -11,11 +15,16 @@ function Editable(props) {
         <form className={`editable-edit ${props.editClass || "" } `} 
         onSubmit={(event)=>{
           event.preventDefault()
-          if(props.onSubmit)props.onSubmit()
+          if(props.onSubmit)props.onSubmit(inputValue);
+          setShowEdit(false);
+          setInputValue("");
         }}
         >
-            <input type="text"
-            defaultValue={props.text} 
+            <input 
+            autoFocus
+            type="text"
+            value={inputValue}
+            onChange={(e)=>setInputValue(e.target.value)}
             placeholder={props.placeholder || "Enter item"}
             />
             <div className='editable-edit-footer'>

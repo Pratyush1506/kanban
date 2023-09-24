@@ -47,3 +47,19 @@
     height: 14px;
     width: 14px;
 }
+
+.card-top-more{
+    position: relative;
+    cursor: pointer;
+}
+.card-dropdown p {
+    cursor: pointer;
+}
+
+.card-dropdown{
+    background-color: white;
+    width: 130px;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 1px 0 20px rgba(0, 0, 0, 0.05);
+}
