@@ -17,7 +17,7 @@ function App() {
       title: title,
       labels: [],
       tasks: [],
-      date: "",
+      date: new Date(Date.now()).toISOString().substr(0, 10),
       desc: "",
     };
 
