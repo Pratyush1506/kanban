@@ -21,7 +21,6 @@ Managing tasks and projects effectively is essential for productivity and organi
 
 - **Create Boards**: You have the flexibility to create new boards with distinct titles, categories, or any organizational structure that suits your needs. Additionally, you can seamlessly delete boards when they are no longer necessary, ensuring your workspace remains clutter-free and well-organized.
 
-![](https://github.com/Pratyush1506/kanban/blob/master/gif/Add%20and%20delete%20boards.gif)
 
 - **Add Cards**: Within each board, you have the ability to add new cards by specifying a card title. Similarly, you can easily delete cards when they are no longer relevant or needed. This dynamic card management feature ensures your boards stay up-to-date and tailored to your tasks.
 
