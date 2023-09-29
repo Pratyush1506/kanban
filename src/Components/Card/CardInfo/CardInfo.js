@@ -217,7 +217,7 @@ function CardInfo(props) {
                 <Editable 
                   text="Add new task"  
                   placeholder="Enter task"
-                  buttonText="Add Labels"
+                  buttonText="Add task"
                   onSubmit={(value)=>addTask(value)}
                 />
                 </div>
