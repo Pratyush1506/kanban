@@ -29,7 +29,15 @@ function Board(props) {
       <div className="board-cards custom-scroll">
         {
           props.board?.cards.map((item)=>(
-            <Card key={item.id} card={item} removeCard={props.removeCard} boardId = {props.board?.id} />
+            <Card
+            key={item.id} 
+            card={item} 
+            removeCard={props.removeCard} 
+            boardId = {props.board?.id} 
+            handleDragEnd = {props.handleDragEnd}
+            handleDragEnter = {props.handleDragEnter}
+            updateCard = {props.updateCard}
+            />
           ))
         }
         <Editable 

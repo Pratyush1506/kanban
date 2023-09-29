@@ -5,10 +5,11 @@ import { X } from 'react-feather'
 
 function Editable(props) {
   const [showEdit, setShowEdit] = useState(false);
-  const [inputValue, setInputValue] = useState("")
+  const [inputValue, setInputValue] = useState(props.cardInfoText || "")
+
 
   return (
-    <div className='edittable'>
+    <div className='editable'>
 
     {
       showEdit ? (
@@ -34,7 +35,7 @@ function Editable(props) {
         </form>
 
       ) : (
-        <p className={`editable-display ${props.displayClass || ""}`} onClick={()=>setShowEdit(true)}>{props.text || "Add item"}</p>
+        <p className={`editable-display ${props.displayClass || ""}`} onClick={()=>setShowEdit(true)}>{props.text || props.cardInfoText || "Add item"}</p>
       )
     }   
     </div>
