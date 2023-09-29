@@ -21,8 +21,6 @@ Managing tasks and projects effectively is essential for productivity and organi
 
 - **Create or Delete Boards**: You have the flexibility to create new boards with distinct titles, categories, or any organizational structure that suits your needs. Additionally, you can seamlessly delete boards when they are no longer necessary, ensuring your workspace remains clutter-free and well-organized.
 
-![add board](https://github.com/Pratyush1506/kanban/blob/master/gif/AddAndDeleteBoards.gif)
-
 ![AddAndDeleteBoards](https://github.com/Pratyush1506/kanban/assets/67052941/8e5f8da9-9065-4ed6-946a-ab836ea377c6)
 
 
