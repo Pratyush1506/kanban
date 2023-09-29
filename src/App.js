@@ -134,7 +134,7 @@ function App() {
               text="Add Board" 
               placeholder="Enter board title" 
               onSubmit={(value) => addBoard(value)}
-              / >
+              />
           </div>
         </div>
       </div>
