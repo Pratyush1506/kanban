@@ -13,6 +13,7 @@
 
 .board-top-more{
     position: relative;
+    cursor: pointer;
 }
 
 .board-dropdown p {
