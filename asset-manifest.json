@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Pratyush1506/kanban/static/css/main.6b6ea9ab.css",
-    "main.js": "/Pratyush1506/kanban/static/js/main.ceaca2bb.js",
-    "index.html": "/Pratyush1506/kanban/index.html",
-    "main.6b6ea9ab.css.map": "/Pratyush1506/kanban/static/css/main.6b6ea9ab.css.map",
-    "main.ceaca2bb.js.map": "/Pratyush1506/kanban/static/js/main.ceaca2bb.js.map"
+    "main.css": "/kanban/static/css/main.6b6ea9ab.css",
+    "main.js": "/kanban/static/js/main.ceaca2bb.js",
+    "index.html": "/kanban/index.html",
+    "main.6b6ea9ab.css.map": "/kanban/static/css/main.6b6ea9ab.css.map",
+    "main.ceaca2bb.js.map": "/kanban/static/js/main.ceaca2bb.js.map"
   },
   "entrypoints": [
     "static/css/main.6b6ea9ab.css",
