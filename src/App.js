@@ -1,43 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Board from './Components/Board/Board';
+import Editable from './Components/Editable/Editable';
 
 function App() {
-  
-  const initialBoard = [
-    {
-      id: Date.now() + Math.random(),
-      title: "Wishlist",
-      cards: [],
-    },
-    {
-      id: Date.now() + Math.random(),
-      title: "Applied",
-      cards: [],
-    },
-    {
-      id: Date.now() + Math.random(),
-      title: "Interviewing",
-      cards: [],
-    },
-    {
-      id: Date.now() + Math.random(),
-      title: "Offer",
-      cards: [],
-    },
-    {
-      id: Date.now() + Math.random(),
-      title: "Rejected",
-      cards: [],
-    },
-    {
-      id: Date.now() + Math.random(),
-      title: "Ghosted",
-      cards: [],
-    },
-  ]
-
-  const [boards, setBoards] = useState(JSON.parse(localStorage.getItem('jobtracker')) || initialBoard);
+  const [boards, setBoards] = useState(JSON.parse(localStorage.getItem('kanban')) ||  []);
 
   const [target, setTarget]=useState({
     cid: "",
@@ -51,7 +18,7 @@ function App() {
       labels: [],
       tasks: [],
       date: "",
-      link: "",
+      desc: "",
     };
 
     const index = boards.findIndex((item) => item.id === bid)
@@ -75,7 +42,20 @@ function App() {
     setBoards(tempBoards);
   };
 
-  
+  const addBoard = (title) => {
+    setBoards([...boards,
+    {
+      id: Date.now() + Math.random(),
+      title,
+      cards: [],
+    },
+    ]);
+  };
+
+  const removeBoard = (bid)=>{
+    const tempBoards = boards.filter(item=>item.id !== bid);
+    setBoards(tempBoards);
+  }
 
   const handleDragEnter=(cid, bid) => {
     setTarget({
@@ -122,13 +102,8 @@ function App() {
     setBoards(tempBoards)
   };
 
-  const resetData= () =>{
-    // localStorage.setItem("jobreacker", JSON.stringify(initialBoard))
-    setBoards(initialBoard);
-  }
-
   useEffect(() => {
-    localStorage.setItem("jobtracker", JSON.stringify(boards))
+    localStorage.setItem("kanban", JSON.stringify(boards))
   }, [boards]);
 
 
@@ -136,7 +111,6 @@ function App() {
     <div className="App">
       <div className="app-navbar">
         <h2>Kanban</h2>
-        <button onClick={() =>resetData()} className='reset-button' >Reset data</button>
       </div>
       <div className="app-outer">
         <div className="app-boards">
@@ -145,6 +119,7 @@ function App() {
               <Board 
               key={item.id}
               board={item}
+              removeBoard = {removeBoard}
               addCard = {addCard}
               removeCard = {removeCard}
               handleDragEnter = {handleDragEnter}
@@ -153,7 +128,14 @@ function App() {
                />
             ))
           }
-          
+          <div className='app-boards-board'>
+            <Editable 
+              displayClass="app-boards-board-add" 
+              text="Add Board" 
+              placeholder="Enter board title" 
+              onSubmit={(value) => addBoard(value)}
+              />
+          </div>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Editable from '../../Editable/Editable'
 import './CardInfo.css'
 import Modal from '../../Modal/Modal'
-import { Briefcase, Calendar, CheckSquare, Link, List, Tag, Trash, Type } from 'react-feather'
+import { Calendar, CheckSquare, List, Tag, Trash, Type } from 'react-feather'
 import Chip from '../../Chip/Chip'
 
 function CardInfo(props) {
@@ -98,8 +98,8 @@ function CardInfo(props) {
 {/* Title */}
               <div className="cardinfo-box">
                 <div className="cardinfo-box-title">
-                  <Briefcase />
-                  Company
+                  <Type />
+                  Title
                 </div>
                 <div className="cardinfo-box-body">
                   <Editable 
@@ -112,18 +112,18 @@ function CardInfo(props) {
                 </div>
               </div>
 
-{/* Application link */}
+{/* Description */}
               <div className="cardinfo-box">
                 <div className="cardinfo-box-title">
-                  <a href={values.link} ><Link /></a>
-                  Link
+                  <List />
+                  Description
                 </div>
                 <div className="cardinfo-box-body">
                   <Editable 
-                    cardInfoText={values.link}
-                    placeholder="Enter application link"
-                    buttonText="Add apllication link"
-                    onSubmit = {(value)=>setValues({...values, link: value})}
+                    cardInfoText={values.desc}
+                    placeholder="Enter Description"
+                    buttonText="Set Description"
+                    onSubmit = {(value)=>setValues({...values, desc: value})}
                   />
                 </div>
               </div>
@@ -132,7 +132,7 @@ function CardInfo(props) {
               <div className="cardinfo-box">
                 <div className="cardinfo-box-title">
                   <Calendar />
-                  Date Applied
+                  Date
                 </div>
                 <div className="cardinfo-box-body">
                   <input type="date"
@@ -189,7 +189,7 @@ function CardInfo(props) {
               <div className="cardinfo-box">
                 <div className="cardinfo-box-title">
                   <CheckSquare />
-                  Process
+                  Tasks
                 </div>
 
                 <div className="cardinfo-box-progress-bar">

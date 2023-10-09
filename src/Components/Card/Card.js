@@ -1,6 +1,6 @@
 import React from 'react'
 import './Card.css'
-import { CheckSquare, Clock, MoreHorizontal, Link } from 'react-feather'
+import { CheckSquare, Clock, MoreHorizontal } from 'react-feather'
 import Chip from '../Chip/Chip'
 import Dropdown from '../Dropdown/Dropdown'
 import { useState } from 'react'
@@ -10,6 +10,7 @@ function Card(props) {
     
 const [showDropdown, setShowDropdown] = useState(false);
 const [showModal, setShowModal] = useState(false);
+
 
   return (
     <>
@@ -52,15 +53,7 @@ const [showModal, setShowModal] = useState(false);
                     )}
                 </div>
             </div>
-            <div className="card-title"> {props.card?.title} 
-            { props.card?.link && (
-                <a href= {props.card?.link} onClick={(event)=>{event.stopPropagation()}}>
-                <Link />
-                </a>
-                )
-            }
-                
-            </div>
+            <div className="card-title"> {props.card?.title} </div>
             <div className="card-footer">
                 {
                     props.card?.date &&( 
