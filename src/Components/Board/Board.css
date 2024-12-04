@@ -3,11 +3,13 @@
     max-height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
 .board-top{
     display: flex;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 1rem;
 }
 
 
@@ -34,11 +36,13 @@
     align-items: center;
     font-weight: bold;
     gap: 5px;
+    font-size: 1.5rem;
+
 }
 
-.board-top-title span{
+/* .board-top-title span{
     color: gray;
-}
+} */
 
 .board-cards{
     height: 100%;
